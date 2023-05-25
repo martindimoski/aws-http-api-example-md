@@ -1,0 +1,16 @@
+org: mdimoski
+app: aws-http-api-example-md
+service: aws-http-api-example-md
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
